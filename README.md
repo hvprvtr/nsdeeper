@@ -10,3 +10,11 @@ Use -h for see all params. Example:
 ./nsdeeper.py -d top-level-domains.txt -s already-known-subdomains.txt -w dict-for-brute.txt -t 500 
 ```
 
+## Install
+```
+pip3 install dnspython
+```
+or
+```
+sudo apt install python3-dnspython
+```
