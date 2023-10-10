@@ -12,9 +12,7 @@ Use -h for see all params. Example:
 
 ## Install
 ```
-pip3 install dnspython
+pip3 install dnspython tld randstr
 ```
-or
-```
-sudo apt install python3-dnspython
-```
+
+And tools: subfinder, assetfinder, alterx, shuffledns.
