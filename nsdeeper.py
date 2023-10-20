@@ -15,12 +15,12 @@ logger = Config.logger
 
 domains = set()
 if os.path.exists(Config.top_level_domains_file):
-    domains.update(file_to_set(Config.top_level_domains_file))
+    domains.update(file_to_set_specific(Config.top_level_domains_file))
 else:
     domains.add(Config.top_level_domains_file)
 
 if Config.known_subdomains_file != "":
-    domains.update(file_to_set(Config.known_subdomains_file))
+    domains.update(file_to_set_specific(Config.known_subdomains_file))
 logger.info("We got {0} targets for deeping".format(len(domains)))
 
 q = queue.Queue()

@@ -47,14 +47,14 @@ def secs_to_text(secs):
     return " ".join(str_time)
 
 
-def file_to_set(fpath):
+def file_to_set_specific(fpath):
     result = set()
     with open(fpath) as fh:
         for line in fh:
             line = line.strip()
             if not len(line) or line.startswith("#"):
                 continue
-            result.add(line)
+            result.add(line.lower())
     return result
 
 

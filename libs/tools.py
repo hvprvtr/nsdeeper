@@ -222,7 +222,7 @@ def process_tool_result(output_file, domains, checked_domains, q, trusted=False)
     new_cnt = 0
     with open(output_file) as fh:
         for domain_candidate in fh:
-            domain_candidate = domain_candidate.strip()
+            domain_candidate = domain_candidate.strip().lower()
             if not len(domain_candidate):
                 continue
 
