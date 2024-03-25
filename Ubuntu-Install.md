@@ -11,8 +11,16 @@ sudo tar -C /usr/bin/ -xzf assetfinder-linux-amd64-0.1.1.tgz
 go install github.com/projectdiscovery/alterx/cmd/alterx@latest
 sudo ln -s $HOME/go/bin/alterx /usr/local/bin/alterx
 
-
 go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
 sudo ln -s $HOME/go/bin/shuffledns /usr/local/bin/shuffledns
 
-wget https://github.com/trickest/resolvers/raw/main/resolvers-extended.txt -O resolvers.txt
+wget https://github.com/trickest/resolvers/raw/main/resolvers-extended.txt -O resolvers-tmp.txt
+cat resolvers-tmp.txt | sed 's/\|/ /'|awk '{print $1}' > resolvers.txt
+rm resolvers-tmp.txt
+
+git clone https://github.com/blechschmidt/massdns.git
+cd massdns
+make
+sudo make install 
+cd ../
+
